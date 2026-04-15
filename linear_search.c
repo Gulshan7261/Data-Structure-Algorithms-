@@ -1,16 +1,22 @@
-#include<stdio.h>
-int main(){
-    // int n;
-    int n=3;
-    int m,missing;
-    int sum =0;
-    int a[]={0,2,3,4,5.7,8,9};
-    // scanf("%d",&n);
+#include <stdio.h>
 
-    for(int i=0; i<n; i++){
-        sum = sum+a[i];
+int main() {
+    
+    int arr[] = {4,3,1,5,0};
+    int n = sizeof(arr)/ sizeof(arr[0]); 
+
+    int missing;
+
+    for (int i = 0; i <= n; i++) {
+        missing = missing ^ i;
     }
-    m = (n+1)*(n+2)/2;
-    missing =m-sum;
-    printf("missing is:%d\n",missing); 
+
+    for(int i = 0; i < n; i++) {
+        missing = missing ^ arr[i];
+    }
+
+    printf("Missing: %d\n", missing );
+
+
+    return 0;
 }
